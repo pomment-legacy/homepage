@@ -1,4 +1,4 @@
->div.top-menu
+>div.top-menu.{{color}}
     >div.container
         >div.brand
             >span

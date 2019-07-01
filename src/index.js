@@ -14,6 +14,20 @@ const homeHeader = new HomeHeader();
 const homeInfo = new HomeInfo();
 body.nav = nav;
 
+const toTop = (ctx, next) => {
+    window.scrollTo(0, 0);
+    next();
+};
+
+const navColor = () => {
+    const gap = 108;
+    if (window.pageYOffset >= gap) {
+        nav.$data.color = 'bright';
+    } else {
+        nav.$data.color = '';
+    }
+};
+
 page('/*', (ctx) => {
     if (ctx.path === '/') {
         page.redirect('home');
@@ -22,16 +36,19 @@ page('/*', (ctx) => {
     page.redirect(ctx.path.replace(/^\/+/, ''));
 });
 
-page('home', () => {
+page('home', toTop, () => {
     inform();
     home.header = homeHeader;
     home.info = homeInfo;
+    nav.$data.color = '';
     body.$data.page = 'home';
     body.content = home;
+    window.addEventListener('scroll', navColor);
     exec();
 });
 
 page.exit('home', (ctx, next) => {
+    window.removeEventListener('scroll', navColor);
     next();
 });
 

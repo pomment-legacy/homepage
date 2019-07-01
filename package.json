@@ -42,6 +42,7 @@
   "dependencies": {
     "ef.js": "^0.9.7",
     "normalize.css": "^8.0.1",
-    "page": "^1.11.4"
+    "page": "^1.11.4",
+    "pomment-frontend": "^2.1.8"
   }
 }

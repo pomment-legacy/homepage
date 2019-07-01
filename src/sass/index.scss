@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+$navHeight:     3.5em;
+$columns:       12;
+$gutterWidth:   36px;
+$columnWidth:   100%/$columns;
+$screenTablet:  768px;
+$screenDesktop: 992px;
+$screenLarge:   1200px;
+
 @import "~normalize.css";
 @import "./fluidable.scss";
 @import './body.scss';
@@ -7,7 +15,6 @@
 
 body {
     &.home {
-        margin-top: 3.25em;
         background-color: #00251a;
         background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23003827' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='4' cy='4' r='3.5'/%3E%3Ccircle cx='14' cy='14' r='3.5'/%3E%3C/g%3E%3C/svg%3E");
         background-attachment: fixed;
