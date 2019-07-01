@@ -13,6 +13,7 @@
             padding: 0.6em 0;
         }
         >.reasons {
+            margin: 0 -1em;
             >.point {
                 position: relative;
                 padding: 1.5em;
@@ -31,6 +32,20 @@
                     >div {
                         line-height: 1.4em;
                         margin-top: -0.2em;
+                    }
+                }
+                @media (min-width: $screenTablet) {
+                    &.left-half {
+                        padding-right: 0.75em;
+                        >.detail {
+                            padding-right: 0.75em;
+                        }
+                    }
+                    &.right-half {
+                        padding-left: 0.75em;
+                        >.detail {
+                            left: 8.25em;
+                        }
                     }
                 }
             }
