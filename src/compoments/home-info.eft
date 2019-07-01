@@ -5,12 +5,32 @@
         >div.point.col-6.col-mb-12
             >img
                 #src = assets/beach-ball.svg
+            >div.detail
+                >h3
+                    .安装简便
+                >div
+                    .这玩意的安装真是太简单了，傻逼都能装好！
         >div.point.col-6.col-mb-12
             >img
                 #src = assets/beach-ball.svg
+            >div.detail
+                >h3
+                    .安装简便
+                >div
+                    .这玩意的安装真是太简单了，傻逼都能装好！
         >div.point.col-6.col-mb-12
             >img
                 #src = assets/beach-ball.svg
+            >div.detail
+                >h3
+                    .安装简便
+                >div
+                    .这玩意的安装真是太简单了，傻逼都能装好！
         >div.point.col-6.col-mb-12
             >img
                 #src = assets/beach-ball.svg
+            >div.detail
+                >h3
+                    .安装简便
+                >div
+                    .这玩意的安装真是太简单了，傻逼都能装好！

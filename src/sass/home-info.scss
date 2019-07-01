@@ -14,9 +14,15 @@
         }
         >.reasons {
             >.point {
+                position: relative;
                 padding: 0.9em;
                 >img {
                     width: 6em;
+                }
+                >.detail {
+                    position: absolute;
+                    left: 7.8em;
+                    top: 0;
                 }
             }
         }
