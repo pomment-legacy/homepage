@@ -1,6 +1,7 @@
 >header
     >div.headline
-        >h1
-            .Pomment
-        >div.description
-            .简单的静态博客评论解决方案
+        >div.inner
+            >h1
+                .Pomment
+            >div.description
+                .简单的静态博客评论解决方案

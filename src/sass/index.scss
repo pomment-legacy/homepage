@@ -1,2 +1,9 @@
 @import './body.scss';
 @import './nav.scss';
+
+body {
+    &.home {
+        margin-top: 3.25em;
+        @import './home-header.scss';
+    }
+}

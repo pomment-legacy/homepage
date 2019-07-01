@@ -24,6 +24,7 @@ page('/*', (ctx) => {
 page('home', () => {
     inform();
     home.header = homeHeader;
+    body.$data.page = 'home';
     body.content = home;
     exec();
 });
