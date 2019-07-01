@@ -38,5 +38,10 @@
     "build-unofficial": "rollup -c ./scripts/rollup.config.js",
     "lint": "eslint --ext .js src",
     "clean": "del-cli dist/*.js dist/*.css"
+  },
+  "dependencies": {
+    "ef.js": "^0.9.7",
+    "normalize.css": "^8.0.1",
+    "page": "^1.11.4"
   }
 }

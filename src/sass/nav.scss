@@ -1,0 +1,54 @@
+.top-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 3.25em;
+    color: #fff;
+    // background-color: #fff;
+    >.container {
+        >.brand {
+            float: left;
+            padding: 0 1.2em;
+            height: 100%;
+            line-height: 3.25em;
+            >span {
+                font-size: 1.4em;
+                font-weight: bold;
+            }
+        }
+        >.top-nav {
+            float: right;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            >.item {
+                display: inline-block;
+                >a {
+                    padding: 0 1.2em;
+                    display: block;
+                    height: 3.25em;
+                    line-height: 3.25em;
+                }
+            }
+        }
+    }
+    &::before {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 3.25em;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, .72) 0, rgba(0, 0, 0, 0) 100%);
+        z-index: -1;
+        // opacity: 0;
+        transition: opacity .23s;
+        content: "";
+    }
+}
+
+.container {
+    max-width: 960px;
+    height: 100%;
+    margin: 0 auto;
+}

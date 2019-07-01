@@ -1,0 +1,18 @@
+>div.top-menu
+    >div.container
+        >div.brand
+            >span
+                .Pomment
+        >ul.top-nav
+            >li.item
+                >a
+                    .首页
+            >li.item
+                >a
+                    .文档
+            >li.item
+                >a
+                    .FAQ
+            >li.item
+                >a
+                    .GitHub
