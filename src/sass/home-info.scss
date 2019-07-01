@@ -8,9 +8,17 @@
         >h2 {
             margin: 0;
             text-align: center;
-            font-size: 1.6em;
+            font-size: 1.7em;
             border-bottom: 1px solid #e2e5e9;
-            padding: 0.5em 0;
+            padding: 0.6em 0;
+        }
+        >.reasons {
+            >.point {
+                padding: 0.9em;
+                >img {
+                    width: 6em;
+                }
+            }
         }
     }
 }
