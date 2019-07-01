@@ -28,9 +28,9 @@
                     .Pomment 使用传统的、可自行托管的后端，并使用 JSON 存储数据，让您可以真正控制自己的数据。
         >div.point.col-6.col-mb-12.right-half
             >img
-                #src = assets/beach-ball.svg
+                #src = assets/package.svg
             >div.detail
                 >h3
-                    .安装简便
+                    .透明开放
                 >div
-                    .啊
+                    .Pomment 所有组件使用 JavaScript 编写，通过 Node.js 运行，并遵守 BSD 许可证提供源代码。
