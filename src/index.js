@@ -1,5 +1,7 @@
 import { inform, exec } from 'ef.js';
 import page from 'page';
+import PommentWidget from 'pomment-frontend/src/frontend';
+import DumbSDK from './dumb-sdk';
 import Body from './compoments/body.eft';
 import Nav from './compoments/nav.eft';
 import Home from './compoments/home.eft';
@@ -43,6 +45,11 @@ page('home', toTop, () => {
     nav.$data.color = '';
     body.$data.page = 'home';
     body.content = home;
+    homeInfo.demoWidget = new PommentWidget({
+        fixedHeight: 56,
+        SDKProvider: DumbSDK,
+    });
+    homeInfo.demoWidget.load();
     window.addEventListener('scroll', navColor);
     exec();
 });
