@@ -17,16 +17,18 @@
             >.point {
                 position: relative;
                 padding: 1.5em;
+                min-height: 9em;
                 >img {
+                    position: absolute;
+                    left: 1.5em;
+                    top: 1.5em;
                     width: 6em;
                 }
                 >.detail {
-                    position: absolute;
-                    left: 9em;
-                    top: 0;
-                    padding-right: 1.5em;
+                    padding-left: 7.5em;
                     >h3 {
-                        margin: 0.8em 0;
+                        margin: 0;
+                        margin-bottom: 0.8em;
                         font-size: 1.4em;
                     }
                     >div {
@@ -37,14 +39,11 @@
                 @media (min-width: $screenTablet) {
                     &.left-half {
                         padding-right: 0.75em;
-                        >.detail {
-                            padding-right: 0.75em;
-                        }
                     }
                     &.right-half {
                         padding-left: 0.75em;
                         >.detail {
-                            left: 8.25em;
+                            padding-left: 8.25em;
                         }
                     }
                 }
