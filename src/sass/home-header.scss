@@ -1,13 +1,11 @@
 >.container {
     >header {
         >.headline {
-            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 18em;
             >.inner {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate3d(-50%, -50%, 0);
                 >h1 {
                     font-family: 'Rubik', sans-serif;
                     text-align: center;

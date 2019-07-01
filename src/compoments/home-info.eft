@@ -1,2 +1,12 @@
 >div.white-box
-    .placeholder
+    >h2
+        .Why Pomment?
+    >section.reasons.col-group
+        >div.col-6.col-mb-12
+            .原因 1
+        >div.col-6.col-mb-12
+            .原因 2
+        >div.col-6.col-mb-12
+            .原因 3
+        >div.col-6.col-mb-12
+            .原因 4

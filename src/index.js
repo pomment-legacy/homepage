@@ -6,6 +6,7 @@ import Home from './compoments/home.eft';
 import HomeHeader from './compoments/home-header.eft';
 import HomeInfo from './compoments/home-info.eft';
 import 'normalize.css';
+import './sass/fluidable.scss';
 import './sass/index.scss';
 
 const body = new Body();
