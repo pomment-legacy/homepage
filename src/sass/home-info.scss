@@ -15,14 +15,23 @@
         >.reasons {
             >.point {
                 position: relative;
-                padding: 0.9em;
+                padding: 1.5em;
                 >img {
                     width: 6em;
                 }
                 >.detail {
                     position: absolute;
-                    left: 7.8em;
+                    left: 9em;
                     top: 0;
+                    padding-right: 1.5em;
+                    >h3 {
+                        margin: 0.8em 0;
+                        font-size: 1.4em;
+                    }
+                    >div {
+                        line-height: 1.4em;
+                        margin-top: -0.2em;
+                    }
                 }
             }
         }

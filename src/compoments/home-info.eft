@@ -9,13 +9,13 @@
                 >h3
                     .安装简便
                 >div
-                    .这玩意的安装真是太简单了，傻逼都能装好！
+                    .只需一条命令即可安装、升级，通过简单配置即可开始使用。只需一条命令即可安装、升级，通过简单配置即可开始使用。
         >div.point.col-6.col-mb-12
             >img
-                #src = assets/beach-ball.svg
+                #src = assets/shell.svg
             >div.detail
                 >h3
-                    .安装简便
+                    .易于操作
                 >div
                     .这玩意的安装真是太简单了，傻逼都能装好！
         >div.point.col-6.col-mb-12
