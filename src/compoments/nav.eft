@@ -1,18 +1,22 @@
 >div.top-menu.{{color}}
-    >div.container
+    >div.nav-container
         >div.brand
             >span
                 .Pomment
         >ul.top-nav
             >li.item
                 >a
+                    #href = about:blank
                     .首页
             >li.item
                 >a
+                    #href = about:blank
                     .文档
             >li.item
                 >a
+                    #href = about:blank
                     .FAQ
             >li.item
                 >a
+                    #href = https://github.com/pomment
                     .GitHub

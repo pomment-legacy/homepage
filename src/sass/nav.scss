@@ -7,16 +7,11 @@
     color: #fff;
     z-index: 10000;
     transition: background-color .23s, box-shadow .23s;
-    &.bright {
-        background-color: rgba(255, 255, 255, .94);
-        color: #000;
-        box-shadow: 0 0 45px 0 rgba(0, 0, 0, .12);
-        &::before {
-            opacity: 0;
-        }
-    }
     // background-color: #fff;
-    >.container {
+    >.nav-container {
+        max-width: 960px;
+        height: 100%;
+        margin: 0 auto;
         >.brand {
             float: left;
             padding: 0 1.2em;
@@ -40,6 +35,15 @@
                     display: block;
                     height: $navHeight;
                     line-height: $navHeight;
+                    color: #fff;
+                    box-shadow: inset #fff 0 0 0 0;
+                    text-decoration: none;
+                    transition: color 0.21s, box-shadow 0.21s;
+                    &:hover, &.focus {
+                        color: #fff;
+                        box-shadow: inset #fff 0 -3px 0 0;
+                        text-decoration: none;
+                    }
                 }
             }
         }
@@ -55,6 +59,29 @@
         opacity: 1;
         transition: opacity .23s;
         content: "";
+    }
+    &.bright {
+        background-color: rgba(255, 255, 255, .94);
+        color: #000;
+        box-shadow: 0 0 45px 0 rgba(0, 0, 0, .12);
+        >.nav-container {
+            >.top-nav {
+                >.item {
+                    >a {
+                        color: #000;
+                        box-shadow: inset #000 0 0 0 0;
+                        &:hover, &.focus {
+                            color: #4db6ac;
+                            box-shadow: inset #4db6ac 0 -3px 0 0;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+        &::before {
+            opacity: 0;
+        }
     }
 }
 

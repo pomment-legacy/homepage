@@ -12,11 +12,15 @@
                     color: #fff;
                     margin: 0;
                     font-size: 5em;
+                    @media not all and (min-width: $screenMiniTablet) {
+                        font-size: 3.2em;
+                    }
                 }
                 >.description {
                     text-align: center;
                     color: rgba(255, 255, 255, 0.6);
-                    margin: 0.6em 0;
+                    margin: 0.4em 0;
+                    line-height: 1.4em;
                 }
             }
         }

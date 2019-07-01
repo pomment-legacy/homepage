@@ -5,6 +5,7 @@
         >div.point.col-6.col-mb-12.left-half
             >img
                 #src = assets/beach-ball.svg
+                #aria-hidden = true
             >div.detail
                 >h3
                     .安装简便
@@ -13,6 +14,7 @@
         >div.point.col-6.col-mb-12.right-half
             >img
                 #src = assets/shell.svg
+                #aria-hidden = true
             >div.detail
                 >h3
                     .易于操作
@@ -21,6 +23,7 @@
         >div.point.col-6.col-mb-12.left-half
             >img
                 #src = assets/safe.svg
+                #aria-hidden = true
             >div.detail
                 >h3
                     .传统后端
@@ -29,6 +32,7 @@
         >div.point.col-6.col-mb-12.right-half
             >img
                 #src = assets/package.svg
+                #aria-hidden = true
             >div.detail
                 >h3
                     .透明开放
