@@ -10,6 +10,7 @@ body {
         margin-top: 3.25em;
         background-color: #00251a;
         background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23003827' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='4' cy='4' r='3.5'/%3E%3Ccircle cx='14' cy='14' r='3.5'/%3E%3C/g%3E%3C/svg%3E");
+        background-attachment: fixed;
         @import './home-header.scss';
         @import './home-info.scss';
     }
