@@ -5,18 +5,18 @@
                 .Pomment
         >ul.top-nav
             >li.item
-                >a
+                >a.{{active0}}
                     #href = about:blank
                     .首页
             >li.item
-                >a
+                >a.{{active1}}
                     #href = about:blank
                     .文档
             >li.item
-                >a
+                >a.{{active2}}
                     #href = about:blank
                     .FAQ
             >li.item
-                >a
+                >a.{{active3}}
                     #href = https://github.com/pomment
                     .GitHub

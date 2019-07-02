@@ -30,6 +30,14 @@ const navColor = () => {
     }
 };
 
+const setNav = (item) => {
+    const navItems = 4;
+    for (let i = 0; i < navItems; i += 1) {
+        nav.$data[`active${i}`] = '';
+    }
+    nav.$data[`active${item}`] = 'focus';
+};
+
 page('/*', (ctx) => {
     if (ctx.path === '/') {
         page.redirect('home');
@@ -40,6 +48,7 @@ page('/*', (ctx) => {
 
 page('home', toTop, () => {
     inform();
+    setNav(0);
     home.header = homeHeader;
     home.info = homeInfo;
     nav.$data.color = '';
@@ -51,7 +60,7 @@ page('home', toTop, () => {
     });
     homeInfo.demoWidget.load();
     window.addEventListener('scroll', navColor);
-    exec();
+    exec(true);
 });
 
 page.exit('home', (ctx, next) => {
