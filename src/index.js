@@ -9,6 +9,7 @@ import Home from './compoments/home.eft';
 import HomeHeader from './compoments/home-header.eft';
 import HomeInfo from './compoments/home-info.eft';
 import Doc from './compoments/doc.eft';
+import LoadingCircle from './compoments/loading-circle.eft';
 import './sass/index.scss';
 
 const body = new Body();
@@ -17,11 +18,12 @@ const home = new Home();
 const homeHeader = new HomeHeader();
 const homeInfo = new HomeInfo();
 const doc = new Doc();
+const loading = new LoadingCircle();
+let gap = 108;
 body.nav = nav;
 body.$data.year = new Date().getFullYear();
 
 const navColor = () => {
-    const gap = 108;
     if (window.pageYOffset >= gap) {
         nav.$data.color = 'bright';
     } else {
@@ -53,10 +55,10 @@ page('/*', (ctx) => {
 
 page('home', toTop, () => {
     inform();
+    gap = 108;
     setNav(0);
     home.header = homeHeader;
     home.info = homeInfo;
-    nav.$data.color = '';
     body.$data.page = 'home';
     body.content = home;
     homeInfo.demoWidget = new PommentWidget({
@@ -73,10 +75,17 @@ page.exit('home', (ctx, next) => {
     next();
 });
 
-page('doc', toTop, () => {
+page('doc', () => {
+    page.redirect('doc/get-started');
+});
+
+page('doc/:ref', toTop, () => {
     inform();
+    gap = 16;
     setNav(1);
+    body.$data.page = 'doc';
     body.content = doc;
+    doc.loading = loading;
     exec(true);
 });
 

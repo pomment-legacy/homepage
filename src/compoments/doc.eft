@@ -1,1 +1,3 @@
 >div.white-box
+    >div.loading-part
+        -loading
