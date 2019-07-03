@@ -20,7 +20,11 @@ const base = {
         file: 'dist/index.js',
         format: 'iife',
         sourcemap: (env !== 'production'),
+        globals: {
+            marked: 'marked',
+        },
     },
+    external: ['marked'],
     plugins: [
         progress({
             clearLine: false,

@@ -6,11 +6,11 @@
         >ul.top-nav
             >li.item
                 >a.{{active0}}
-                    #href = about:blank
+                    #href = #!home
                     .首页
             >li.item
                 >a.{{active1}}
-                    #href = about:blank
+                    #href = #!doc
                     .文档
             >li.item
                 >a.{{active2}}
