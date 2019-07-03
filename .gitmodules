@@ -1,0 +1,3 @@
+[submodule "dist/document"]
+	path = dist/document
+	url = https://github.com/pomment/document
