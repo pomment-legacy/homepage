@@ -58,6 +58,7 @@ const base = {
         }),
         replace({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+            'process.env.PMHP_BUILD_DATE': JSON.stringify(new Date().toISOString()),
         }),
         uglify(),
     ],

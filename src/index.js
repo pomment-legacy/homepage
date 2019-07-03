@@ -86,3 +86,7 @@ body.$mount({ target: document.body, option: 'replace' });
 console.log(marked(`# demo
 
 Hello World!!! I am tcdw ~~aaaaaaaa~~`));
+
+if (process.env.NODE_ENV !== 'production') {
+    console.info(`Build date: ${process.env.PMHP_BUILD_DATE}`);
+}
