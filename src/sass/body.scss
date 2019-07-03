@@ -3,6 +3,9 @@ body {
     font-family: "lucida grande", "lucida sans unicode", "Helvetica Neue", "Noto Sans", Tahoma,
         "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN Normal", "Heiti SC", "Microsoft YaHei", "Noto Sans CJK", "WenQuanYi Micro Hei", SimSun, sans-serif;
     letter-spacing: 0.03em;
+    .hidden {
+        display: none !important;
+    }
     code, pre {
         font-family: Consolas, Monaco, "Courier New", Courier, monospace;
     }
