@@ -26,6 +26,9 @@ body {
     }
     &.doc {
         margin-top: $navHeight + 1em;
+        @media not all and (min-width: $screenMiniTablet) {
+            margin-top: 0;
+        }
         @import './doc.scss';
     }
 }

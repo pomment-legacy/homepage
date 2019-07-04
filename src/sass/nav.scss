@@ -1,3 +1,27 @@
+@mixin bright {
+    background-color: rgba(255, 255, 255, .94);
+    color: #000;
+    box-shadow: 0 0 45px 0 rgba(0, 0, 0, .12);
+    >.nav-container {
+        >.top-nav {
+            >.item {
+                >a {
+                    color: #000;
+                    box-shadow: inset #000 0 0 0 0;
+                    &:hover, &.focus {
+                        color: #4db6ac;
+                        box-shadow: inset #4db6ac 0 -3px 0 0;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+    &::before {
+        opacity: 0;
+    }
+}
+
 .top-menu {
     position: fixed;
     left: 0;
@@ -24,6 +48,9 @@
             }
         }
         >.top-nav {
+            @media not all and (min-width: $screenMiniTablet) {
+                display: none;
+            }
             float: right;
             list-style: none;
             margin: 0;
@@ -61,26 +88,14 @@
         content: "";
     }
     &.bright {
-        background-color: rgba(255, 255, 255, .94);
-        color: #000;
-        box-shadow: 0 0 45px 0 rgba(0, 0, 0, .12);
-        >.nav-container {
-            >.top-nav {
-                >.item {
-                    >a {
-                        color: #000;
-                        box-shadow: inset #000 0 0 0 0;
-                        &:hover, &.focus {
-                            color: #4db6ac;
-                            box-shadow: inset #4db6ac 0 -3px 0 0;
-                            text-decoration: none;
-                        }
-                    }
-                }
-            }
-        }
-        &::before {
-            opacity: 0;
+        @include bright;
+    }
+}
+
+body.doc {
+    .top-menu {
+        @media not all and (min-width: $screenMiniTablet) {
+            @include bright;
         }
     }
 }

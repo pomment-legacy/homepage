@@ -1,6 +1,9 @@
 >.container {
     >.white-box {
         padding: 1.2em;
+        @media not all and (min-width: $screenMiniTablet) {
+            padding-top: $navHeight + 1.2em;
+        }
         .loading-part, .failed-part {
             padding: 1em 0;
             text-align: center;
