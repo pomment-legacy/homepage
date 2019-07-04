@@ -8,6 +8,14 @@
         >.main {
             >.nav {
                 border-right: 2px #ccc dashed;
+                position: sticky;
+                top: $navHeight + 1em;
+                @media not all and (min-width: $screenTablet) {
+                    position: static;
+                    padding-bottom: 1em;
+                    margin-bottom: 1em;
+                    border: 0;
+                }
                 >.category {
                     line-height: 2em;
                     >.title {
@@ -25,6 +33,10 @@
                         }
                     }
                 }
+            }
+            .markdown-body ol li, .markdown-body ul li {
+                margin-top: 3px;
+                margin-bottom: 3px;
             }
         }
     }

@@ -25,7 +25,7 @@ body {
         @import './home-info.scss';
     }
     &.doc {
-        margin-top: $navHeight + 2em;
+        margin-top: $navHeight + 1em;
         @import './doc.scss';
     }
 }
