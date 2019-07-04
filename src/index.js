@@ -2,6 +2,8 @@ import { inform, exec } from 'ef.js';
 import axios from 'axios';
 import page from 'page';
 import marked from 'marked';
+import hljs from 'highlight.js';
+import hljsNginx from 'highlight.js/lib/languages/nginx';
 import PommentWidget from 'pomment-frontend/src/frontend';
 import DumbSDK from './dumb-sdk';
 import Body from './compoments/body.eft';
@@ -102,6 +104,10 @@ const loadArticle = async (artName) => {
         doc.$data.loadingHiddenA = 'hidden';
         doc.$data.docHiddenA = '';
         doc.$refs.content.innerHTML = marked(res.data);
+        const hlNeeded = doc.$refs.content.querySelectorAll('pre code');
+        Array.prototype.forEach.call(hlNeeded, (e) => {
+            hljs.highlightBlock(e);
+        });
     } catch (e) {
         doc.$data.loadingHiddenA = 'hidden';
         doc.$data.failedHiddenA = '';
@@ -159,8 +165,9 @@ page('doc/:ref', toTop, async (ctx) => {
 });
 
 page({ hashbang: true });
-window.addEventListener('scroll', navColor);
+hljs.registerLanguage('nginx', hljsNginx);
 body.$mount({ target: document.body, option: 'replace' });
+window.addEventListener('scroll', navColor);
 
 if (process.env.NODE_ENV !== 'production') {
     console.info(`Build date: ${process.env.PMHP_BUILD_DATE}`);

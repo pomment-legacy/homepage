@@ -23,9 +23,10 @@ const base = {
         globals: {
             marked: 'marked',
             axios: 'axios',
+            'highlight.js': 'hljs',
         },
     },
-    external: ['marked', 'axios'],
+    external: ['marked', 'axios', 'highlight.js'],
     plugins: [
         progress({
             clearLine: false,
