@@ -1,3 +1,14 @@
 >div.white-box
     >div.loading-part.{{loadingHidden}}
         -loading
+    >div.failed-part.{{failedHidden = hidden}}
+        .文档列表加载失败，请尝试刷新页面。
+    >div.main.col-group.{{docHidden}}
+        >div.col-3.col-mb-12.nav
+            +categories
+        >div.col-9.col-mb-12.content
+            >div.loading-part.{{loadingHiddenA}}
+                -loadingA
+            >div.failed-part.{{failedHiddenA = hidden}}
+                .文档内容加载失败，请尝试刷新页面。
+            >div.content.markdown-body.{{docHiddenA}}#content

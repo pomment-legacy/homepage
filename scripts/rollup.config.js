@@ -22,9 +22,10 @@ const base = {
         sourcemap: (env !== 'production'),
         globals: {
             marked: 'marked',
+            axios: 'axios',
         },
     },
-    external: ['marked'],
+    external: ['marked', 'axios'],
     plugins: [
         progress({
             clearLine: false,

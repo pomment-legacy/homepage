@@ -9,6 +9,7 @@ $screenTablet:      768px;
 $screenDesktop:     992px;
 $screenLarge:       1200px;
 
+@import "~@sukka/markdown.css/dist/markdown.css";
 @import "~normalize.css";
 @import "./fluidable.scss";
 @import './body.scss';

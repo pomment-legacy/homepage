@@ -9,6 +9,14 @@ body {
     code, pre {
         font-family: Consolas, Monaco, "Courier New", Courier, monospace;
     }
+    a, .markdown-body a {
+        color: #c25e00;
+        text-decoration: none;
+        &:hover {
+            color: #fb8c00;
+            text-decoration: underline;
+        }
+    }
     .container {
         padding-right: 1em;
         padding-left: 1em;

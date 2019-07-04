@@ -1,5 +1,31 @@
 >.container {
     >.white-box {
-        padding: 1em;
+        padding: 1.2em;
+        .loading-part, .failed-part {
+            padding: 1em 0;
+            text-align: center;
+        }
+        >.main {
+            >.nav {
+                border-right: 2px #ccc dashed;
+                >.category {
+                    line-height: 2em;
+                    >.title {
+                        font-weight: bold;
+                    }
+                    >ul {
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+                        padding-bottom: 1em;
+                    }
+                    &:last-child {
+                        >ul {
+                            padding-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
