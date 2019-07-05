@@ -25,6 +25,7 @@ const homeHeader = new HomeHeader();
 const homeInfo = new HomeInfo();
 const doc = new Doc();
 
+const docWhiteList = [];
 let gap = 108;
 let articleList = null;
 
@@ -76,6 +77,7 @@ const loadMenu = async () => {
             });
             const itemName = Object.keys(articleList[e]);
             itemName.forEach((f) => {
+                docWhiteList.push(articleList[e][f]);
                 const item = new DocItem({
                     $data: {
                         name: `#!doc/${articleList[e][f]}`,
@@ -94,6 +96,13 @@ const loadMenu = async () => {
 };
 
 const loadArticle = async (artName) => {
+    if (docWhiteList.indexOf(artName) < 0) {
+        doc.$data.loadingHiddenA = 'hidden';
+        doc.$data.docHiddenA = 'hidden';
+        doc.$data.failedHiddenA = '';
+        console.error(`${artName} is not whitelisted`);
+        return;
+    }
     doc.$data.loadingHiddenA = '';
     doc.$data.docHiddenA = 'hidden';
     doc.$data.failedHiddenA = 'hidden';
