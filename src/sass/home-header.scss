@@ -4,7 +4,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 17em;
+            height: 19em;
             >.inner {
                 >h1 {
                     font-family: 'Rubik', sans-serif;
@@ -21,6 +21,25 @@
                     color: rgba(255, 255, 255, 0.6);
                     margin: 0.4em 0;
                     line-height: 1.4em;
+                }
+                >.inner-btn {
+                    text-align: center;
+                    padding-top: 1em;
+                    >a {
+                        display: inline-block;
+                        border: 2px solid rgba(255, 255, 255, 0.28);
+                        padding: 0.8em 1.8em;
+                        margin: 0.5em;
+                        border-radius: 0.5em;
+                        color: #fff;
+                        text-decoration: none;
+                        transition: border-color 0.3s;
+                    }
+                    >a:hover {
+                        border: 2px solid rgba(255, 255, 255, 0.6);
+                        color: #fff;
+                        text-decoration: none
+                    }
                 }
             }
         }

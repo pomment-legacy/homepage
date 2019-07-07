@@ -5,3 +5,7 @@
                 .Pomment
             >div.description
                 .简单的静态博客评论解决方案
+            >div.inner-btn
+                >a
+                    #href = #!doc/get-started
+                    .开始安装
