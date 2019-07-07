@@ -14,9 +14,5 @@
                     .文档
             >li.item
                 >a.{{active2}}
-                    #href = about:blank
-                    .FAQ
-            >li.item
-                >a.{{active3}}
                     #href = https://github.com/pomment
                     .GitHub

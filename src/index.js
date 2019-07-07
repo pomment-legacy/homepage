@@ -25,6 +25,7 @@ const homeHeader = new HomeHeader();
 const homeInfo = new HomeInfo();
 const doc = new Doc();
 
+const navItems = 3;
 const docWhiteList = [];
 let gap = 108;
 let articleList = null;
@@ -47,7 +48,6 @@ const toTop = (ctx, next) => {
 };
 
 const setNav = (item) => {
-    const navItems = 4;
     for (let i = 0; i < navItems; i += 1) {
         nav.$data[`active${i}`] = '';
     }
