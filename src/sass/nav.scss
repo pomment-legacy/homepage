@@ -1,17 +1,41 @@
+$barAlign: 0.55em;
+$barWidth: 1.7em;
+$barHeight: 0.25em;
+$menuItems: 3;
+
 @mixin bright {
     background-color: rgba(255, 255, 255, .94);
     color: #000;
     box-shadow: 0 0 45px 0 rgba(0, 0, 0, .12);
     >.nav-container {
+        >.brand {
+            >.burger-btn {
+                &:focus {
+                    .bar {
+                        background-color: #000;
+                    }
+                }
+                .bar {
+                    background-color: #000;
+                }
+            }
+        }
         >.top-nav {
             >.item {
                 >a {
                     color: #000;
                     box-shadow: inset #000 0 0 0 0;
+                    @media not all and (min-width: $screenMiniTablet) {
+                        box-shadow: unset;
+                    }
                     &:hover, &.focus {
                         color: #4db6ac;
                         box-shadow: inset #4db6ac 0 -3px 0 0;
                         text-decoration: none;
+                        @media not all and (min-width: $screenMiniTablet) {
+                            box-shadow: unset;
+                            background-color: #f2f2f2;
+                        }
                     }
                 }
             }
@@ -30,8 +54,15 @@
     height: $navHeight;
     color: #fff;
     z-index: 10000;
-    transition: background-color .23s, box-shadow .23s;
-    // background-color: #fff;
+    background-color: rgba(255,255,255,0);
+    transition: background-color .23s, box-shadow .23s, transform 0.3s;
+    @media not all and (min-width: $screenMiniTablet) {
+        height: auto;
+        transform: translateY(calc(-3.5em * 3));
+        &.opened {
+            transform: translateY(0);
+        }
+    }
     >.nav-container {
         max-width: 960px;
         height: 100%;
@@ -48,9 +79,6 @@
             }
         }
         >.top-nav {
-            @media not all and (min-width: $screenMiniTablet) {
-                display: none;
-            }
             float: right;
             list-style: none;
             margin: 0;
@@ -89,6 +117,101 @@
     }
     &.bright {
         @include bright;
+    }
+    @media not all and (min-width: $screenMiniTablet) {
+        >.nav-container {
+            >.brand {
+                float: none;
+                position: relative;
+
+                >.burger-btn {
+                    appearance: none;
+                    border: 0;
+                    padding: 0;
+                    margin: 0;
+                    width: $navHeight;
+                    height: $navHeight;
+                    position: absolute;
+                    background-color: transparent;
+                    // background-color: black;
+                    top: 0;
+                    right: 0;
+
+                    &:focus {
+                        outline: none;
+                        background-color: rgba(255,255,255,0.1);
+                        .bar {
+                            background-color: #f0f0f0;
+                        }
+                    }
+
+                    .bar {
+                        position: absolute;
+                        left: 50%;
+                        transform: translate3d(-50%, -50%, 0);
+                        width: $barWidth;
+                        height: $barHeight;
+                        border-radius: $barHeight / 2;
+                        // font-size: 0.1em;
+                        // background-color: #dbdbdb;
+                        background-color: #fff;
+                        transition: transform 0.15s, background-color 0.15s;
+
+                        &.bar-1 {
+                            top: $navHeight / 2 - $barAlign;
+                        }
+
+                        &.bar-2 {
+                            top: $navHeight / 2;
+                        }
+
+                        &.bar-3 {
+                            top: $navHeight / 2 + $barAlign;
+                        }
+                    }
+
+                    &.step-2 {
+                        .bar {
+                            &.bar-1 {
+                                transform: translate3d(-50%, calc(-50% + #{$barAlign}), 0);
+                            }
+
+                            &.bar-3 {
+                                transform: translate3d(-50%, calc(-50% - #{$barAlign}), 0);
+                            }
+                        }
+                    }
+
+                    &.step-3 {
+                        .bar {
+                            &.bar-1 {
+                                transform: translate3d(-50%, calc(-50% + #{$barAlign}), 0) rotate(45deg) scale(1.2);
+                            }
+
+                            &.bar-3 {
+                                transform: translate3d(-50%, calc(-50% - #{$barAlign}), 0) rotate(-45deg) scale(1.2);
+                            }
+                        }
+                    }
+
+                    &.step-2-3 {
+                        .bar {
+                            &.bar-2 {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            >.top-nav {
+                float: none;
+
+                >.item {
+                    display: block;
+                }
+            }
+        }
     }
 }
 

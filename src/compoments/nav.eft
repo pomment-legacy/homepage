@@ -1,8 +1,5 @@
->div.top-menu.{{color}}
+>div.top-menu.{{color}}.{{mobileOpened}}
     >div.nav-container
-        >div.brand
-            >span
-                .Pomment
         >ul.top-nav
             >li.item
                 >a.{{active0}}
@@ -16,3 +13,11 @@
                 >a.{{active2}}
                     #href = https://github.com/pomment
                     .GitHub
+        >div.brand
+            >span
+                .Pomment
+            >button.burger-btn.{{burgerStep}}
+                @click = clickBurger
+                >div.bar.bar-1
+                >div.bar.bar-2
+                >div.bar.bar-3

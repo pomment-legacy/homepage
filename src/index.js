@@ -29,11 +29,15 @@ const navItems = 3;
 const docWhiteList = [];
 let gap = 108;
 let articleList = null;
+let brightLock = false;
 
 body.nav = nav;
 body.$data.year = new Date().getFullYear();
 
 const navColor = () => {
+    if (brightLock) {
+        return;
+    }
     if (window.pageYOffset >= gap) {
         nav.$data.color = 'bright';
     } else {
@@ -124,6 +128,8 @@ const loadArticle = async (artName) => {
     }
 };
 
+// 路由设定
+
 page('/*', (ctx) => {
     if (ctx.path === '/') {
         page.redirect('home');
@@ -172,6 +178,45 @@ page('doc/:ref', toTop, async (ctx) => {
         console.error(e);
     }
 });
+
+// nav
+
+let menuOpen = false;
+let menuTimer;
+
+const closeMobileMenu = () => {
+    clearTimeout(menuTimer);
+    nav.$data.mobileOpened = '';
+    nav.$data.burgerStep = 'step-2 step-2-3';
+    menuTimer = setTimeout(() => {
+        nav.$data.burgerStep = '';
+        brightLock = false;
+        navColor();
+    }, 150);
+};
+
+const openMobileMenu = () => {
+    brightLock = true;
+    nav.$data.color = 'bright';
+    clearTimeout(menuTimer);
+    nav.$data.mobileOpened = 'opened';
+    nav.$data.burgerStep = 'step-2';
+    menuTimer = setTimeout(() => {
+        nav.$data.burgerStep = 'step-3 step-2-3';
+    }, 150);
+};
+
+nav.$methods.clickBurger = () => {
+    if (menuOpen) {
+        closeMobileMenu();
+    } else {
+        openMobileMenu();
+    }
+    menuOpen = !menuOpen;
+};
+
+
+// init
 
 page({ hashbang: true });
 hljs.registerLanguage('nginx', hljsNginx);
