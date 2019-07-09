@@ -34,7 +34,7 @@ $menuItems: 3;
                         text-decoration: none;
                         @media not all and (min-width: $screenMiniTablet) {
                             box-shadow: unset;
-                            background-color: #f2f2f2;
+                            // background-color: #f2f2f2;
                         }
                     }
                 }
@@ -77,26 +77,109 @@ $menuItems: 3;
                 font-weight: bold;
                 font-family: 'Rubik', sans-serif;
             }
+            >.burger-btn {
+                display: none;
+            }
+            @media not all and (min-width: $screenMiniTablet) {
+                float: none;
+                position: relative;
+                >.burger-btn {
+                    display: block;
+                    appearance: none;
+                    border: 0;
+                    padding: 0;
+                    margin: 0;
+                    width: $navHeight;
+                    height: $navHeight;
+                    position: absolute;
+                    background-color: transparent;
+                    top: 0;
+                    right: 0;
+                    &:focus {
+                        outline: none;
+                        background-color: rgba(255,255,255,0.1);
+                        .bar {
+                            background-color: #f0f0f0;
+                        }
+                    }
+                    .bar {
+                        position: absolute;
+                        left: 50%;
+                        transform: translate3d(-50%, -50%, 0);
+                        width: $barWidth;
+                        height: $barHeight;
+                        border-radius: $barHeight / 2;
+                        background-color: #fff;
+                        transition: transform 0.15s, background-color 0.15s;
+                        &.bar-1 {
+                            top: $navHeight / 2 - $barAlign;
+                        }
+                        &.bar-2 {
+                            top: $navHeight / 2;
+                        }
+                        &.bar-3 {
+                            top: $navHeight / 2 + $barAlign;
+                        }
+                    }
+                    &.step-2 {
+                        .bar {
+                            &.bar-1 {
+                                transform: translate3d(-50%, calc(-50% + #{$barAlign}), 0);
+                            }
+                            &.bar-3 {
+                                transform: translate3d(-50%, calc(-50% - #{$barAlign}), 0);
+                            }
+                        }
+                    }
+                    &.step-3 {
+                        .bar {
+                            &.bar-1 {
+                                transform: translate3d(-50%, calc(-50% + #{$barAlign}), 0) rotate(45deg) scale(1.2);
+                            }
+                            &.bar-3 {
+                                transform: translate3d(-50%, calc(-50% - #{$barAlign}), 0) rotate(-45deg) scale(1.2);
+                            }
+                        }
+                    }
+                    &.step-2-3 {
+                        .bar {
+                            &.bar-2 {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
         }
         >.top-nav {
             float: right;
             list-style: none;
             margin: 0;
             padding: 0;
+            @media not all and (min-width: $screenMiniTablet) {
+                float: none;
+            }
             >.item {
                 display: inline-block;
+                @media not all and (min-width: $screenMiniTablet) {
+                    display: block;
+                }
                 >a {
                     padding: 0 1.2em;
                     display: block;
                     height: $navHeight;
                     line-height: $navHeight;
                     color: #fff;
-                    box-shadow: inset #fff 0 0 0 0;
+                    @media (min-width: $screenMiniTablet) {
+                        box-shadow: inset #fff 0 0 0 0;
+                    }
                     text-decoration: none;
                     transition: color 0.21s, box-shadow 0.21s;
                     &:hover, &.focus {
                         color: #fff;
-                        box-shadow: inset #fff 0 -3px 0 0;
+                        @media (min-width: $screenMiniTablet) {
+                            box-shadow: inset #fff 0 -3px 0 0;
+                        }
                         text-decoration: none;
                     }
                 }
@@ -117,101 +200,6 @@ $menuItems: 3;
     }
     &.bright {
         @include bright;
-    }
-    @media not all and (min-width: $screenMiniTablet) {
-        >.nav-container {
-            >.brand {
-                float: none;
-                position: relative;
-
-                >.burger-btn {
-                    appearance: none;
-                    border: 0;
-                    padding: 0;
-                    margin: 0;
-                    width: $navHeight;
-                    height: $navHeight;
-                    position: absolute;
-                    background-color: transparent;
-                    // background-color: black;
-                    top: 0;
-                    right: 0;
-
-                    &:focus {
-                        outline: none;
-                        background-color: rgba(255,255,255,0.1);
-                        .bar {
-                            background-color: #f0f0f0;
-                        }
-                    }
-
-                    .bar {
-                        position: absolute;
-                        left: 50%;
-                        transform: translate3d(-50%, -50%, 0);
-                        width: $barWidth;
-                        height: $barHeight;
-                        border-radius: $barHeight / 2;
-                        // font-size: 0.1em;
-                        // background-color: #dbdbdb;
-                        background-color: #fff;
-                        transition: transform 0.15s, background-color 0.15s;
-
-                        &.bar-1 {
-                            top: $navHeight / 2 - $barAlign;
-                        }
-
-                        &.bar-2 {
-                            top: $navHeight / 2;
-                        }
-
-                        &.bar-3 {
-                            top: $navHeight / 2 + $barAlign;
-                        }
-                    }
-
-                    &.step-2 {
-                        .bar {
-                            &.bar-1 {
-                                transform: translate3d(-50%, calc(-50% + #{$barAlign}), 0);
-                            }
-
-                            &.bar-3 {
-                                transform: translate3d(-50%, calc(-50% - #{$barAlign}), 0);
-                            }
-                        }
-                    }
-
-                    &.step-3 {
-                        .bar {
-                            &.bar-1 {
-                                transform: translate3d(-50%, calc(-50% + #{$barAlign}), 0) rotate(45deg) scale(1.2);
-                            }
-
-                            &.bar-3 {
-                                transform: translate3d(-50%, calc(-50% - #{$barAlign}), 0) rotate(-45deg) scale(1.2);
-                            }
-                        }
-                    }
-
-                    &.step-2-3 {
-                        .bar {
-                            &.bar-2 {
-                                display: none;
-                            }
-                        }
-                    }
-                }
-            }
-
-            >.top-nav {
-                float: none;
-
-                >.item {
-                    display: block;
-                }
-            }
-        }
     }
 }
 

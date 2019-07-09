@@ -185,6 +185,7 @@ let menuOpen = false;
 let menuTimer;
 
 const closeMobileMenu = () => {
+    menuOpen = false;
     clearTimeout(menuTimer);
     nav.$data.mobileOpened = '';
     nav.$data.burgerStep = 'step-2 step-2-3';
@@ -196,6 +197,7 @@ const closeMobileMenu = () => {
 };
 
 const openMobileMenu = () => {
+    menuOpen = true;
     brightLock = true;
     nav.$data.color = 'bright';
     clearTimeout(menuTimer);
@@ -212,9 +214,9 @@ nav.$methods.clickBurger = () => {
     } else {
         openMobileMenu();
     }
-    menuOpen = !menuOpen;
 };
 
+nav.$methods.closeMenu = closeMobileMenu;
 
 // init
 

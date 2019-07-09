@@ -3,10 +3,12 @@
         >ul.top-nav
             >li.item
                 >a.{{active0}}
+                    @click = closeMenu
                     #href = #!home
                     .首页
             >li.item
                 >a.{{active1}}
+                    @click = closeMenu
                     #href = #!doc
                     .文档
             >li.item
