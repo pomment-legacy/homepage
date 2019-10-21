@@ -1,3 +1,6 @@
 [submodule "dist/document"]
 	path = dist/document
 	url = https://github.com/pomment/document
+[submodule "import-disqus"]
+	path = import-disqus
+	url = https://github.com/pomment/import-disqus
