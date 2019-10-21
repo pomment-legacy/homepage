@@ -5,6 +5,7 @@ cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
   - node_modules/
+  - import-disqus/node_modules/
   - dist/document/
 
 build:
@@ -15,4 +16,7 @@ build:
     - git submodule update --recursive --remote
     - npm install
     - npm run build
+    - npm --prefix ./import-disqus install ./import-disqus
+    - npm --prefix ./import-disqus run build
+    - cp -r ./import-disqus/dist ./dist/import-disqus
     - ./node_modules/.bin/netlify deploy --prod --dir=dist/ --auth=${netlify_key}
