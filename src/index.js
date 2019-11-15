@@ -162,7 +162,8 @@ page('doc', () => {
     page.redirect('doc/get-started');
 });
 
-page('doc/:ref', toTop, async (ctx) => {
+page('doc/*', toTop, async (ctx) => {
+    console.log(ctx);
     inform();
     gap = 16;
     setNav(1);
@@ -173,7 +174,7 @@ page('doc/:ref', toTop, async (ctx) => {
     exec(true);
     try {
         await loadMenu();
-        await loadArticle(ctx.params.ref);
+        await loadArticle(ctx.params[0]);
     } catch (e) {
         console.error(e);
     }
