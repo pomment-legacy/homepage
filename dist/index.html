@@ -9,10 +9,68 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/styles/routeros.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap">
 </head>
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/axios@0.19.0/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked@0.6.3/lib/marked.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+<body class="home">
+    <div class="top-menu" id="top-menu">
+        <div class="nav-container">
+            <ul class="top-nav">
+                <li class="item"><a href="/" class="focus">首页</a></li>
+                <li class="item"><a href="https://doc.pomment.org">文档</a></li>
+                <li class="item"><a href="https://github.com/pomment">GitHub</a></li>
+            </ul>
+            <div class="brand"><span>Pomment</span>
+                <button class="burger-btn" id="burger-btn">
+                    <div class="bar bar-1"></div>
+                    <div class="bar bar-2"></div>
+                    <div class="bar bar-3"></div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <header>
+            <div class="headline">
+                <div class="inner">
+                    <h1>Pomment</h1>
+                    <div class="description">简单的静态博客评论解决方案</div>
+                    <div class="inner-btn"><a href="#!doc/get-started">开始安装</a></div>
+                </div>
+            </div>
+        </header>
+        <div class="white-box">
+            <h2>Why Pomment?</h2>
+            <section class="reasons col-group">
+                <div class="point col-6 col-mb-12 left-half"><img src="assets/beach-ball.svg" aria-hidden="true">
+                    <div class="detail">
+                        <h3>安装简便</h3>
+                        <div>只需一条命令即可安装、升级，通过简单配置即可开始使用。</div>
+                    </div>
+                </div>
+                <div class="point col-6 col-mb-12 right-half"><img src="assets/shell.svg" aria-hidden="true">
+                    <div class="detail">
+                        <h3>易于操作</h3>
+                        <div>我们提供的访客前端界面友好，易于操作，无需进行复杂的登录、授权等操作，输入个人信息，直接开始留言。</div>
+                    </div>
+                </div>
+                <div class="point col-6 col-mb-12 left-half"><img src="assets/safe.svg" aria-hidden="true">
+                    <div class="detail">
+                        <h3>传统后端</h3>
+                        <div>Pomment 使用传统的、可自行托管的后端，并使用 JSON 存储数据，让您可以真正控制自己的数据。</div>
+                    </div>
+                </div>
+                <div class="point col-6 col-mb-12 right-half"><img src="assets/package.svg" aria-hidden="true">
+                    <div class="detail">
+                        <h3>透明开放</h3>
+                        <div>Pomment 所有组件使用 JavaScript 编写，通过 Node.js 运行，并遵守 BSD 许可证提供源代码。</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer>© 2020 The Pomment Team
+            <br>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a
+                href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a
+                href="https://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC
+                3.0 BY</a></footer>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>

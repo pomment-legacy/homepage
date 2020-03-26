@@ -1,5 +1,0 @@
->div.category
-    >div.title
-        .{{title}}
-    >ul
-        +item
