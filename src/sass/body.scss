@@ -30,7 +30,7 @@ body {
             padding: 0 1em;
             box-sizing: content-box;
             border-radius: 0.6em;
-            box-shadow: rgba(0, 0, 0, 0.32) 0.25em 0.25em 1em 0.25em;
+            box-shadow: rgba(0, 0, 0, .12) .25em .25em 1em .25em;
             @media not all and (min-width: $screenMiniTablet) {
                 border-radius: 0;
             }
