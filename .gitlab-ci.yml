@@ -1,6 +1,7 @@
 before_script:
   - eval $(ssh-agent -s)
   - echo "$DEPLOY_KEY" | tr -d '\r' | ssh-add -
+  - npm cache clean -f
 
 stages:
   - build
