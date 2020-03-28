@@ -1,3 +1,9 @@
+before_script:
+  - eval $(ssh-agent -s)
+  - echo $DEPLOY_KEY > deploy.key
+  - chmod 0600 deploy.key
+  - ssh-add deploy.key
+
 stages:
   - build
 
