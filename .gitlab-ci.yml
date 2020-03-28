@@ -27,7 +27,7 @@ build:
     - git config --global push.default matching
     - git config --global user.email "tcdw2011@gmail.com"
     - git config --global user.name "tcdw"
-    - echo 'silverblog.org' > ./CNAME
+    - echo 'www.pomment.org' > ./CNAME
     - git add --all .
     - DATE="$(echo $(date -Iseconds))"
     - git commit -m "Auto Build via GitLab CI on $DATE"
