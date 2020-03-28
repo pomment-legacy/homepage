@@ -6,12 +6,6 @@ before_script:
 stages:
   - build
 
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths:
-  - node_modules/
-  - import-disqus/node_modules/
-
 build:
   image: node:latest
   stage: build
