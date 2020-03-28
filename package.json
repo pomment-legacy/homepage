@@ -13,14 +13,14 @@
     "cross-env": "^7.0.2",
     "del-cli": "^3.0.0",
     "node-sass": "^4.13.1",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "postcss-modules": "^1.5.0"
   },
   "scripts": {
-    "dev": "rollup -c ./scripts/rollup.config.js -w",
-    "build": "cross-env NODE_ENV=production rollup -c ./scripts/rollup.config.js",
-    "build-unofficial": "rollup -c ./scripts/rollup.config.js",
+    "dev": "del-cli ./dist && parcel ./src/index.html",
+    "build": "del-cli ./dist && parcel build src/index.html",
     "lint": "eslint --ext .js src",
-    "clean": "del-cli dist/*.js dist/*.css dist/*.map"
+    "clean": "del-cli ./dist"
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
