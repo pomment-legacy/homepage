@@ -5,7 +5,7 @@ before_script:
   - chmod 700 ~/.ssh
 
 cache:
-  key: ${CI_COMMIT_REF_SLUG}-a
+  key: ${CI_COMMIT_REF_SLUG}-b
   paths:
   - node_modules/
   - import-disqus/node_modules/
