@@ -6,7 +6,6 @@ cache:
   paths:
   - node_modules/
   - import-disqus/node_modules/
-  - dist/document/
 
 build:
   image: node:latest
@@ -19,4 +18,13 @@ build:
     - npm --prefix ./import-disqus install ./import-disqus
     - npm --prefix ./import-disqus run build
     - cp -r ./import-disqus/dist ./dist/import-disqus
-    - ./node_modules/.bin/netlify deploy --prod --dir=dist/ --auth=${netlify_key}
+    - cd ./dist
+    - git init
+    - git config --global push.default matching
+    - git config --global user.email "tcdw2011@gmail.com"
+    - git config --global user.name "tcdw"
+    - echo 'silverblog.org' > ./CNAME
+    - git add --all .
+    - DATE="$(echo $(date -Iseconds))"
+    - git commit -m "Auto Build via GitLab CI on $DATE"
+    - git push --quiet --force "git@github.com:pomment/pomment.github.io.git"
