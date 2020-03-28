@@ -1,7 +1,4 @@
-dist/*.js
-dist/*.css
-dist/*.map
-dist/*.jpg
+dist/
 .idea/
 .vscode/
 

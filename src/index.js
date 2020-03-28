@@ -1,3 +1,4 @@
+import 'normalize.css/normalize.css';
 import './sass/index.scss';
 
 const topMenu = document.getElementById('top-menu');
