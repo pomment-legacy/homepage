@@ -12,7 +12,6 @@ $screenLarge:       1200px;
 @import "./fluidable.scss";
 @import './body.scss';
 @import './nav.scss';
-@import './loading-circle.scss';
 
 body {
     background-color: #525354;
@@ -27,6 +26,5 @@ body {
         @media not all and (min-width: $screenMiniTablet) {
             margin-top: 0;
         }
-        @import './doc.scss';
     }
 }
